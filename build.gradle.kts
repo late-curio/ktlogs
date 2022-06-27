@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.run.BootRun
 
 plugins {
 	id("org.springframework.boot") version "2.7.1"
@@ -35,4 +36,12 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.withType<BootRun> {
+	this.jvmArgs = listOf(
+			"-javaagent:/Users/tcrone/work/newrelic/newrelic-java-agent/newrelic-agent/build/newrelicJar/newrelic.jar",
+			"-Dnewrelic.config.file=/Users/tcrone/nr/conf/ktlogs.yml",
+			"-Dnewrelic.environment=staging"
+	)
 }
