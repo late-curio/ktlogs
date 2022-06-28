@@ -19,6 +19,8 @@ repositories {
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	//implementation("com.newrelic.agent.java:newrelic-api:7.5.0")
+	implementation("com.newrelic.logging:logback:2.5.0")
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
